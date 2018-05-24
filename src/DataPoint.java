@@ -3,8 +3,8 @@ import java.util.Arrays;
 public class DataPoint {
 	// Data Labels
 	public static final int iris_setosa = 1;
-	public static final int iris_versicolor = 0;
-	public static final int iris_virginica = 2;
+	public static final int iris_versicolor = 2;
+	public static final int iris_virginica = 0;
 
 	private float[] data;
 	private String label;
@@ -51,5 +51,16 @@ public class DataPoint {
 
 	public String toString() {
 		return Arrays.toString(data) + ": " + label + "\n";
+	}
+
+	public static String getNameFor(int guess) {
+		if (guess == iris_setosa)
+			return "iris_setosa";
+		if (guess == iris_virginica)
+			return "iris_verginica";
+		if (guess == iris_versicolor)
+			return "iris_versicolor";
+		
+		return "";
 	}
 }

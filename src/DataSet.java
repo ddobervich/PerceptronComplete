@@ -50,4 +50,17 @@ public class DataSet {
 
 		return ret;
 	}
+
+	public void removeType(int labelToRemove) {
+		for (int i = 0; i < points.size(); i++) {
+			DataPoint p = points.get(i);
+			
+			if (p.getLabel() == labelToRemove) {
+				points.remove(p);
+				i--;
+			}
+		}
+		
+		// TODO: re-calculate max's and min's of data set
+	}
 }
